@@ -8,8 +8,8 @@
 // arrayDiff([1,2,2,2,3],[2]) == [1,3]
 
 // 1st solution
-function arrayDiff(a, b) {
-  return a.filter((elem) => !b.includes(elem));
+function arrayDiff(arrayOne, arrayTwo) {
+  return arrayOne.filter((elem) => !arrayTwo.includes(elem));
 }
 
 const a = [1, 2];
