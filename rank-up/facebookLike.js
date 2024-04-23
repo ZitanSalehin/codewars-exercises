@@ -55,3 +55,38 @@ console.log(likesStringGenerator(["Max", "John", "Mark", "Max", "Perry"]));
 //     4: `${names[0]}, ${names[1]} and ${names.length - 2} others like this`, 
 //   }[Math.min(4, names.length)]
 // }
+
+
+// clever solution
+function likesProblem(names) {
+    console.log([Math.min(4, names.length)]);
+  return {
+    0: 'no one likes this',
+    1: `${names[0]} likes this`, 
+    2: `${names[0]} and ${names[1]} like this`, 
+    3: `${names[0]}, ${names[1]} and ${names[2]} like this`, 
+    4: `${names[0]}, ${names[1]} and ${names.length - 2} others like this`, 
+  }[Math.min(4, names.length)]
+  
+}
+
+console.log(likesProblem([]));
+console.log(likesProblem(["Peter"]));
+console.log(likesProblem(["James","Adams"]));
+console.log(likesProblem(["Williams","Hazel","Anthony"]));
+console.log(likesProblem(["Daniel","John","Doe","Carter"]));
+console.log(likesProblem(["Joseph","Robert","Michael","David","daisy","Gomez","Daniel"]));
+
+// output
+// [ 0 ]
+// no one likes this
+// [ 1 ]
+// Peter likes this
+// [ 2 ]
+// James and Adams like this
+// [ 3 ]
+// Williams, Hazel and Anthony like this
+// [ 4 ]
+// Daniel, John and 2 others like this
+// [ 4 ]
+// Joseph, Robert and 5 others like this
